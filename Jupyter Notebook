@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+ip_labels, ip_values = zip(*ip_counts.items())
+plt.bar(ip_labels, ip_values)
+plt.xticks(rotation=90)
+plt.xlabel('IP')
+plt.ylabel('Cantidad de accesos')
+plt.title('Accesos por IP')
+plt.show()
+
+code_counts = Counter(codes)
+labels, sizes = zip(*code_counts.items())
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+plt.axis('equal')  # Asegura que el gráfico sea circular
+plt.title('Proporción de códigos HTTP')
+plt.show()
